@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c47">
+  <meta name="description" content="Marco Cini — Alma Automotive e UbiVolt. Contatti professionali.">
+  <title>Marco Cini | Biglietto da visita</title>
+  <style>
+    @font-face { font-family: "Sora"; src: url("assets/Sora-variable.ttf") format("truetype"); font-weight: 100 800; font-style: normal; font-display: swap; }
+    :root { color-scheme: light; font-family: "Sora", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; min-height: 100svh; background: #f3f2ee; color: #102c47; padding: 32px 18px max(24px, env(safe-area-inset-bottom)); }
+    main { max-width: 440px; margin: auto; }
+    .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+    .intro { display: flex; justify-content: space-between; align-items: center; margin: 0 4px 22px; color: #52616c; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #658a6a; display: inline-block; margin-right: 6px; }
+    .switch { display: flex; padding: 5px; border: 1px solid #dcdedc; border-radius: 18px; gap: 5px; margin-bottom: 18px; background: #eaece8; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; cursor: pointer; }
+    .switch button { border: 0; flex: 1; min-height: 48px; border-radius: 13px; background: transparent; color: #52616c; font-weight: 650; font-size: 14px; }
+    .switch button[aria-pressed="true"] { background: #fff; color: #102c47; box-shadow: 0 2px 8px #102c4710; }
+    .card { --accent: #abc9de; --ink: #102c47; --text: #fff; --muted: #ffffffc9; --label: #ffffff8c; --line: #ffffff25; --orbit: #ffffff10; --halo: #ffffff03; position: relative; overflow: hidden; color: var(--text); background: var(--ink); border-radius: 26px; padding: 30px; box-shadow: 0 18px 45px #102c471a; }
+    .card.ubivolt { --accent: #006432; --ink: #dce9e1; --text: #173c2b; --muted: #355d49; --label: #436452; --line: #173c2b25; --orbit: #173c2b10; --halo: #173c2b03; }
+    .card::after { content: ""; position: absolute; width: 250px; height: 250px; border: 1px solid var(--orbit); border-radius: 50%; right: -150px; top: 48px; box-shadow: 0 0 0 35px var(--halo), 0 0 0 70px var(--halo); pointer-events: none; }
+    .brand { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; min-height: 62px; }
+    .brand-logo { width: 62px; height: 62px; object-fit: contain; flex-shrink: 0; }
+    .brand-name { font-size: 18px; font-weight: 650; letter-spacing: -.035em; }
+    .brand-caption { margin-top: 5px; font-size: 9px; color: var(--accent); letter-spacing: .18em; text-transform: uppercase; }
+    .identity { position: relative; z-index: 1; padding: 48px 0 30px; }
+    .identity .eyebrow { color: var(--accent); }
+    h1 { margin: 12px 0 10px; font-size: clamp(34px, 9.5vw, 43px); letter-spacing: -.055em; font-weight: 500; line-height: 1.15; }
+    .role { color: var(--muted); font-size: 15px; line-height: 1.5; margin: 0; }
+    .divider { height: 1px; background: var(--line); margin-bottom: 23px; }
+    .contact { position: relative; z-index: 1; display: flex; gap: 13px; align-items: center; text-decoration: none; color: var(--text); min-height: 55px; overflow-wrap: anywhere; }
+    .contact svg { width: 19px; height: 19px; color: var(--accent); flex-shrink: 0; }
+    .contact small { display: block; font-size: 9px; letter-spacing: .14em; color: var(--label); margin-bottom: 5px; }
+    .contact span { font-size: 14px; }
+    .save { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--accent); color: var(--ink); border: 0; border-radius: 13px; min-height: 54px; width: 100%; margin-top: 25px; font-size: 14px; font-weight: 750; text-decoration: none; }
+    .save svg { width: 19px; height: 19px; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 17px; }
+    .action { display: flex; gap: 8px; align-items: center; justify-content: center; min-height: 49px; border: 1px solid #d5dcd8; border-radius: 13px; background: transparent; color: #102c47; font-size: 13px; text-decoration: none; font-weight: 600; }
+    .action svg { width: 17px; height: 17px; }
+    .qr-trigger { width: 100%; margin-top: 10px; background: #fff; }
+    .qr-panel { padding: 22px; margin-top: 14px; border-radius: 18px; background: #fff; text-align: center; border: 1px solid #d5dcd8; }
+    .qr-panel h2 { margin: 0 0 8px; font-size: 17px; }
+    .qr-panel p { font-size: 12px; line-height: 1.6; color: #52616c; }
+    #qr svg { display: block; width: min(100%, 280px); height: auto; margin: auto; }
+    .qr-panel a { color: #102c47; overflow-wrap: anywhere; font-size: 12px; }
+    footer { text-align: center; color: #6b767d; margin: 22px 0 0; font-size: 11px; line-height: 1.6; }
+    .share-panel { margin-top: 16px; padding: 16px; background: white; border: 1px solid #d5dcd8; border-radius: 14px; }
+    .share-panel p { font-size: 13px; margin: 0 0 10px; line-height: 1.5; }
+    textarea { width: 100%; min-height: 150px; resize: vertical; border: 1px solid #d5dcd8; border-radius: 8px; padding: 10px; font: inherit; font-size: 13px; }
+    #status { font-size: 13px; line-height: 1.5; color: #8c2d24; }
+    #status:empty { display: none; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid #538bba; outline-offset: 4px; }
+    @media (max-width: 360px) { body { padding: 22px 12px; } .card { padding: 24px; } .contact span { font-size: 13px; } }
+    @media print { body { padding: 0; background: white; } .intro, .switch, .actions, .save, .qr-trigger, footer, .share-panel, #status { display: none; } .card { print-color-adjust: exact; -webkit-print-color-adjust: exact; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="intro"><span class="eyebrow">Biglietto digitale</span><span class="eyebrow"><span class="dot"></span>Marco Cini</span></div>
+    <nav class="switch" aria-label="Scegli il profilo professionale">
+      <button type="button" data-profile="alma" aria-pressed="true" aria-controls="card">Alma Automotive</button>
+      <button type="button" data-profile="ubivolt" aria-pressed="false" aria-controls="card">UbiVolt</button>
+    </nav>
+    <article class="card" id="card" aria-label="Biglietto Alma Automotive">
+      <div class="brand">
+        <img class="brand-logo" id="brand-logo" src="assets/alma-logo.svg" alt="Logo Alma Automotive" width="62" height="62">
+        <div><div class="brand-name" id="company">Alma Automotive</div><div class="brand-caption">Professional contact</div></div>
+      </div>
+      <div class="identity">
+        <div class="eyebrow">Engineering · Electrification</div>
+        <h1>Marco Cini</h1>
+        <p class="role" id="role">Electric Powertrain Specialist</p>
+      </div>
+      <div class="divider"></div>
+      <a class="contact" id="email-link" href="mailto:mcini@alma-automotive.it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><small>EMAIL</small><span id="email">mcini@alma-automotive.it</span></div>
+      </a>
+      <a class="contact" id="website-link" href="https://alma-automotive.it/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18 5-5 5-13 0-18Z"/></svg>
+        <div><small>SITO WEB</small><span id="website">alma-automotive.it</span></div>
+      </a>
+      <a class="save" id="save" href="marco-cini-alma.vcf" download="Marco-Cini-Alma-Automotive.vcf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></svg>
+        Salva in rubrica
+      </a>
+    </article>
+    <div class="actions">
+      <a class="action" id="write" href="mailto:mcini@alma-automotive.it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>Scrivimi
+      </a>
+      <button class="action" id="share" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10 6-4m-6 8 6 4"/></svg>Condividi
+      </button>
+    </div>
+    <button class="action qr-trigger" id="show-qr" type="button" aria-expanded="false" aria-controls="qr-panel">Mostra QR del profilo</button>
+    <section class="qr-panel" id="qr-panel" hidden aria-labelledby="qr-title">
+      <h2 id="qr-title">Inquadra il QR</h2>
+      <p id="qr-company">Alma Automotive</p>
+      <div id="qr" role="img" aria-label="QR per aprire il biglietto Alma Automotive"></div>
+      <p id="qr-note">Apri il biglietto con la fotocamera del telefono.</p>
+      <a id="profile-link" href="https://mcini94.github.io/biglietto-da-visita/#alma">Link al biglietto</a>
+      <a class="action" id="download-qr" download="QR-Marco-Cini-Alma-Automotive.svg" href="qr-alma.svg">Scarica QR</a>
+    </section>
+    <div class="share-panel" id="share-panel" hidden>
+      <p>Seleziona e copia questi dati per inviarli via WhatsApp, email o messaggio.</p>
+      <textarea id="share-text" aria-label="Dati del contatto da copiare" readonly></textarea>
+    </div>
+    <p id="status" role="alert"></p>
+    <footer>Due identità professionali. Un solo contatto.<br>Seleziona il profilo che vuoi condividere.</footer>
+    <noscript><p>Per passare a UbiVolt, abilita JavaScript. Puoi anche aprire il <a href="marco-cini-ubivolt.vcf">contatto UbiVolt</a>.</p></noscript>
+  </main>
+  <script src="assets/qrcode.js"></script>
+  <script>
+    const profiles = {
+      alma: { company: "Alma Automotive", role: "Electric Powertrain Specialist", email: "mcini@alma-automotive.it", website: "https://alma-automotive.it/", logo: "assets/alma-logo.svg", filename: "Marco-Cini-Alma-Automotive.vcf" },
+      ubivolt: { company: "UbiVolt", role: "Founder", email: "marco.cini@ubivolt.com", website: "https://ubivolt.com/", logo: "assets/ubivolt-logo.png", filename: "Marco-Cini-UbiVolt.vcf" }
+    };
+    let active = "alma";
+    const byId = id => document.getElementById(id);
+    const escapeVCard = value => value.replace(/\\/g, "\\\\").replace(/\r?\n/g, "\\n").replace(/;/g, "\\;").replace(/,/g, "\\,");
+    function vcard(profile) {
+      return [
+        "BEGIN:VCARD", "VERSION:3.0", "N:Cini;Marco;;;", "FN:Marco Cini",
+        "ORG:" + escapeVCard(profile.company), "TITLE:" + escapeVCard(profile.role),
+        "EMAIL;TYPE=INTERNET,WORK:" + profile.email,
+        "URL;TYPE=WORK:" + profile.website,
+        "END:VCARD", ""
+      ].join("\r\n");
+    }
+    function profileUrl() {
+      const hosted = location.protocol === "https:" || location.protocol === "http:";
+      const url = new URL(hosted ? location.href : "https://mcini94.github.io/biglietto-da-visita/");
+      url.hash = active;
+      return url.href;
+    }
+    function contactText(profile) {
+      const lines = ["Marco Cini", profile.company, profile.role, profile.email, profile.website];
+      if (location.protocol === "https:" || location.protocol === "http:") {
+        lines.push(profileUrl());
+      }
+      return lines.join("\n");
+    }
+    function renderQr() {
+      const profile = profiles[active];
+      const qr = qrcode(0, "M");
+      qr.addData(profileUrl());
+      qr.make();
+      const svg = qr.createSvgTag({ cellSize: 6, margin: 24, scalable: true });
+      byId("qr").innerHTML = svg;
+      byId("qr").setAttribute("aria-label", "QR per aprire il biglietto " + profile.company);
+      byId("qr-company").textContent = profile.company;
+      byId("profile-link").href = profileUrl();
+      byId("download-qr").href = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      byId("download-qr").download = "QR-Marco-Cini-" + profile.company.replace(/ /g, "-") + ".svg";
+      byId("qr-note").textContent = location.protocol === "file:"
+        ? "Anteprima: il QR funzionerà quando il sito sarà pubblicato su mcini94.github.io/biglietto-da-visita/."
+        : "Apri il biglietto con la fotocamera del telefono.";
+    }
+    function render(key) {
+      active = key;
+      const profile = profiles[key];
+      byId("card").classList.toggle("ubivolt", key === "ubivolt");
+      byId("card").setAttribute("aria-label", "Biglietto " + profile.company);
+      byId("company").textContent = profile.company;
+      byId("brand-logo").hidden = !profile.logo;
+      if (profile.logo) {
+        byId("brand-logo").src = profile.logo;
+        byId("brand-logo").alt = "Logo " + profile.company;
+      }
+      byId("role").textContent = profile.role;
+      byId("email").textContent = profile.email;
+      byId("email-link").href = byId("write").href = "mailto:" + profile.email;
+      byId("website-link").href = profile.website;
+      byId("website").textContent = new URL(profile.website).hostname;
+      byId("save").href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcard(profile));
+      byId("save").download = profile.filename;
+      byId("share-panel").hidden = true;
+      byId("status").textContent = "";
+      document.querySelector('meta[name="theme-color"]').content = key === "ubivolt" ? "#dce9e1" : "#102c47";
+      document.querySelectorAll("[data-profile]").forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.profile === key));
+      });
+      if (!byId("qr-panel").hidden) renderQr();
+    }
+    function renderFromHash() {
+      const key = location.hash.slice(1);
+      render(Object.hasOwn(profiles, key) ? key : "alma");
+    }
+    document.querySelectorAll("[data-profile]").forEach(button => {
+      button.addEventListener("click", () => {
+        location.hash = button.dataset.profile;
+        render(button.dataset.profile);
+      });
+    });
+    window.addEventListener("hashchange", renderFromHash);
+    byId("show-qr").addEventListener("click", () => {
+      const show = byId("qr-panel").hidden;
+      if (show) renderQr();
+      byId("qr-panel").hidden = !show;
+      byId("show-qr").setAttribute("aria-expanded", String(show));
+      byId("show-qr").textContent = show ? "Nascondi QR" : "Mostra QR del profilo";
+    });
+    byId("share").addEventListener("click", async () => {
+      const profile = profiles[active];
+      const text = contactText(profile);
+      byId("status").textContent = "";
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: "Marco Cini | " + profile.company, text });
+          return;
+        } catch (error) {
+          if (error.name === "AbortError") return;
+          byId("status").textContent = "Condivisione non disponibile. Puoi copiare i dati qui sotto.";
+        }
+      }
+      byId("share-text").value = text;
+      byId("share-panel").hidden = false;
+      byId("share-text").focus();
+      byId("share-text").select();
+    });
+    renderFromHash();
+  </script>
+</body>
+</html>

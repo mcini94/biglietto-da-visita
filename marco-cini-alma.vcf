@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Cini;Marco;;;
+FN:Marco Cini
+ORG:Alma Automotive
+TITLE:Electric Powertrain Specialist
+EMAIL;TYPE=INTERNET,WORK:mcini@alma-automotive.it
+URL;TYPE=WORK:https://alma-automotive.it/
+END:VCARD

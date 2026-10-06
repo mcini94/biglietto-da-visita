@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Cini;Marco;;;
+FN:Marco Cini
+ORG:UbiVolt
+TITLE:Founder
+EMAIL;TYPE=INTERNET,WORK:marco.cini@ubivolt.com
+URL;TYPE=WORK:https://ubivolt.com/
+END:VCARD
